@@ -12,6 +12,8 @@ function createWindow() {
     },
   });
 
+  mainWindow.setMenuBarVisibility(false)
+
   mainWindow.loadURL('http://localhost:3000');
   mainWindow.on('closed', function () {
     mainWindow = null;
