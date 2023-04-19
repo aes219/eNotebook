@@ -4,3 +4,4 @@ node_modules
 # production
 build
 public/tailwind.css
+.env
