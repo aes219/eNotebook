@@ -1,5 +1,5 @@
 import { useState } from 'react'
-require('dotenv').config
+const config = require("../../config.json")
 //const history = createBrowserHistory();
 
 const Login = () => {
@@ -14,14 +14,14 @@ const Login = () => {
 
     setFormError({})
 
-    if (name !== process.env.USER) {
+    if (name !== config.user) {
       setFormError((prev) => ({
         ...prev,
         name: 'input input-bordered border-error',
       }))
     } else
 
-      if (pass !== process.env.PASS) {
+      if (pass !== config.pass) {
         setFormError((prev) => ({
           ...prev,
           pass: 'input input-bordered border-error',

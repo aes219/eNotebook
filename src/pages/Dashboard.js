@@ -1,5 +1,13 @@
+import Navbar from "../components/Navbar"
+import Notes from "../components/Notes"
+import CreateNote from "../components/CreateNote"
+
 export const Dashboard = () => {
     return(
-        <h1>Hello World</h1>
+        <div>
+            <Navbar/>
+            <Notes/>
+            <CreateNote/>
+        </div>
     )
 }
