@@ -1,28 +1,90 @@
+import { useState } from 'react'
+//const history = createBrowserHistory();
+
 const Login = () => {
-    return(
-        <div class="hero min-h-screen bg-base-200">
-      <div class="hero-content flex-col lg:flex-row-reverse">
-        <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <div class="card-body">
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Username</span>
-              </label>
-              <input type="text" placeholder="Username" class="input input-bordered" id="floatingInput" value="admin" />
+  const { useNavigate } =require( 'react-router-dom')
+const navigate = useNavigate();
+    const [name, setName] = useState('')
+    const [pass, setPass] = useState('')
+    const [formError, setFormError] = useState({})
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+
+        setFormError({})
+
+        if (name !== 'admin') {
+            setFormError((prev) => ({
+                ...prev,
+                name: 'input input-bordered border-error',
+            }))
+        }
+
+        if (pass !== 'vaidik@219') {
+            setFormError((prev) => ({
+                ...prev,
+                pass: 'input input-bordered border-error',
+            }))
+        } else {
+          navigate('/dash')
+        }
+    }
+
+ 
+
+    return (
+        <div className='hero min-h-screen bg-base-200'>
+            <div className='hero-content flex-col lg:flex-row-reverse'>
+                <div className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'>
+                    <div className='card-body'>
+                        <form onSubmit={handleSubmit}>
+                            <div className='form-control'>
+                                <label className='label'>
+                                    <span className='label-text'>Username</span>
+                                </label>
+                                <input
+                                    id='floatingInput'
+                                    type='text'
+                                    placeholder='Username'
+                                    className={`border  ${
+                                        formError['name']
+                                            ? formError['name']
+                                            : 'input input-bordered'
+                                    }`}
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                />
+                            </div>
+                            <div className='form-control'>
+                                <label className='label'>
+                                    <span className='label-text'>Password</span>
+                                </label>
+                                <input
+                                    id='floatingPassword'
+                                    type='password'
+                                    placeholder='Password'
+                                    value={pass}
+                                    className={`border ${
+                                        formError['pass']
+                                            ? formError['pass']
+                                            : 'input input-bordered'
+                                    }`}
+                                    onChange={(e) => setPass(e.target.value)}
+                                />
+                            </div>
+                            <div className='form-control mt-6'>
+                                <button
+                                    className='btn btn-outline no-animation btn-warning'
+                                    type='submit'
+                                >
+                                    Login
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Password</span>
-              </label>
-              <input type="text" placeholder="password" class="input input-bordered" id="floatingPassword"/>
-            </div>
-            <div class="form-control mt-6">
-              <button class="btn btn-outline no-animation btn-warning" id="submit" type="submit">Login</button>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
     )
 }
 

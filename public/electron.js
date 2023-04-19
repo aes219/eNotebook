@@ -1,5 +1,3 @@
-const path = require('path');
-const url = require('url');
 const { app, BrowserWindow } = require('electron');
 
 function createWindow() {
@@ -15,9 +13,6 @@ function createWindow() {
   mainWindow.setMenuBarVisibility(false)
 
   mainWindow.loadURL('http://localhost:3000');
-  mainWindow.on('closed', function () {
-    mainWindow = null;
-  });
 }
 
 app.on('ready', async () => {
