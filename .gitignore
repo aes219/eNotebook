@@ -4,4 +4,4 @@ node_modules
 # production
 build
 public/tailwind.css
-config.json
+src/config.json
