@@ -1,5 +1,5 @@
 import { useState } from 'react'
-const config = require("../../config.json")
+const config = require('../config.json')
 //const history = createBrowserHistory();
 
 const Login = () => {
