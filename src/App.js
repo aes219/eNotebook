@@ -1,4 +1,5 @@
 import { SignIn } from "./pages/SignIn";  
+import './input.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import {Dashboard} from './pages/Dashboard';
   

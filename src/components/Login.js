@@ -44,7 +44,6 @@ const Login = () => {
                   <span className='label-text'>Username</span>
                 </label>
                 <input
-                  id='floatingInput'
                   type='text'
                   placeholder='Username'
                   className={`border  ${formError['name']
@@ -60,7 +59,6 @@ const Login = () => {
                   <span className='label-text'>Password</span>
                 </label>
                 <input
-                  id='floatingPassword'
                   type='password'
                   placeholder='Password'
                   value={pass}
