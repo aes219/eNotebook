@@ -1,5 +1,5 @@
 const { join } = require("path");
-const app = require("../public/electron");
+const app = require("./electron");
 const noteDirectory = join(app.getPath('userData'), 'enotebook-notes');
 const { writeFile, readFile, unlink } = require("fs");
 

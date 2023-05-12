@@ -1,6 +1,4 @@
-const { join } = require("path");
 const { app, BrowserWindow } = require('electron');
-const { existsSync, mkdirSync } = require("fs");
 
 function createWindow() {
   const mainWindow = new BrowserWindow({

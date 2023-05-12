@@ -1,13 +1,17 @@
 import { useState } from "react"
+import eNotebook from "../notesDB";
 
-const CreateNote = ({ onAddNote }) => {
+const CreateNote = () => {
+
+  const [Manager] = useState(() => new eNotebook());
+
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title.trim() && content.trim()) {
-      onAddNote((prevNotes) => [...prevNotes, { title, content }]);
+      Manager.createNote(title, content);
       setTitle('')
       setContent('')
     }
