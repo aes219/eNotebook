@@ -3,6 +3,7 @@
   "main": "src/electron.js",
   "version": "1.0.0",
   "private": true,
+  "contentSecurityPolicy": "script-src 'self'; object-src 'self'; img-src 'self' data:;",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
