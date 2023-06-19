@@ -1,19 +1,31 @@
 import { useState } from "react"
-import eNotebook from "../notesDB";
 
 const CreateNote = () => {
-
-  const [Manager] = useState(() => new eNotebook());
-
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (title.trim() && content.trim()) {
-      Manager.createNote(title, content);
-      setTitle('')
-      setContent('')
+      await fetch(`https://sheetdb.io/api/v1/5r7n7vrrrer7w`, {
+        method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+          body: JSON.stringify(
+            [
+              {
+                title: title,
+                content: content
+              }
+            ]
+          )
+      })
+      .then((res) => {
+      console.warn(res);
+        window.location = "/dash"
+    })
     }
   }
   return (
