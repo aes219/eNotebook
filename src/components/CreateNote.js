@@ -7,13 +7,14 @@ const CreateNote = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (title.trim() && content.trim()) {
-      const notes = window.localStorage.getItem('notes');
-      const note = {
+      const newNote = {
         title,
-        content
+        content,
+        id: Math.random().toString(36).substring(7),
       };
+      const notes = window.localStorage.getItem('notes');
       const parsed = notes ? JSON.parse(notes) : [];
-      parsed.push(note);
+      parsed.push(newNote);
       console.log(`${parsed}`)
       window.localStorage.setItem('notes', JSON.stringify(parsed));
       window.location = "/dash";
