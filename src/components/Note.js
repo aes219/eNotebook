@@ -6,8 +6,9 @@ const Note = () => {
 
   useEffect(() => {
     const notes = window.localStorage.getItem('notes');
-    if (Array.isArray(JSON.parse(notes))) {
-      setListing(JSON.parse(notes));
+    if (notes) {
+      const noteObjects = JSON.parse(notes);
+      setListing(noteObjects);
     } else {
       setListing([]);
     }
@@ -16,9 +17,13 @@ const Note = () => {
   return (
     <div className="items-center">
       {listing.map((a) => (
-        <div style={{margin: '20px'}}>
+        <div style={{ margin: '20px' }}>
           <button>
-            <Card title={a.title} content={a.content}></Card>
+            <Card title={(a.title)?a.title:'Nothing here yet...'} content={(a.content)?a.content:'Start by creating a new note, check above!'} deleteNote={() => {
+              const newListing = listing.filter((note) => note !== a);
+              setListing(newListing);
+              window.localStorage.setItem('notes', JSON.stringify(newListing));
+            }}></Card>
           </button>
         </div>
       ))}
