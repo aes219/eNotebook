@@ -1,5 +1,3 @@
-const icon = require("../icon.svg")
-
 const Card = ({ title, content, deleteNote }) => {
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
