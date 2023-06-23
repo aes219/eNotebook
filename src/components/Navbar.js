@@ -3,6 +3,8 @@ const Navbar = () => {
     window.location = '/'
   }
   const navigate = () => {
+    window.localStorage.setItem("717l3", "")
+    window.localStorage.setItem("c0n73n7", "")
     window.location = '/createNote'
   }
 

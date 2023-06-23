@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 const CreateNote = () => {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+  const [title, setTitle] = useState(window.localStorage.getItem("717l3"));
+  const [content, setContent] = useState(window.localStorage.getItem("c0n73n7"));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
