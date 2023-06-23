@@ -1,6 +1,9 @@
 import { useState } from "react";
 
 const CreateNote = () => {
+  const navigate = () => {
+    window.history.back()
+  }
   const [title, setTitle] = useState(window.localStorage.getItem("717l3"));
   const [content, setContent] = useState(window.localStorage.getItem("c0n73n7"));
 
@@ -24,8 +27,8 @@ const CreateNote = () => {
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <div className="card-body">
+        <div className="card flex-shrink-0 max-w-sm shadow-2xl bg-base-100" style={{width: 500,}}>
+          <div className="card-body h-full">
             <form onSubmit={handleSubmit}>
               <div className="form-control">
                 <label className="label">
@@ -54,6 +57,7 @@ const CreateNote = () => {
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-warning btn-outline no-animation">Create Note</button>
+                <button className="btn btn-primary btn-outline no-animation mt-3" onClick={navigate}>Dashboard</button>
               </div>
             </form>
           </div>
