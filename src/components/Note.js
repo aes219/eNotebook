@@ -32,7 +32,7 @@ const Note = () => {
         <div>
           <button>
             <label
-              for="my_modal_6" onClick={() => { setCurrentNote(a) }}
+              htmlFor="my_modal_6" onClick={() => { setCurrentNote(a) }}
               style={{ cursor: cursor }}
               onMouseOver={handleMouseOver}
               onMouseOut={handleMouseOut}
