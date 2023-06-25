@@ -1,5 +1,5 @@
 const { app, BrowserWindow } = require('electron');
-
+const path  = require("path")
 function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 800,
@@ -8,10 +8,9 @@ function createWindow() {
       nodeIntegration: false,
       contextIsolation: true,
     },
+    icon: path.join(__dirname, '/icon.png')
   });
-
   mainWindow.setMenuBarVisibility(false)
-
   mainWindow.loadURL('http://localhost:3000');
 }
 
