@@ -27,7 +27,7 @@ const Note = () => {
   }, []);
 
   return (
-    <div className="items-center flex flex-wrap justify-around h-min">
+    <div className="ml-8 grid gap-4 grid-cols-3">
       {listing.map((a) => (
         <div>
           <button>
