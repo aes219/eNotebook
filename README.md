@@ -1,6 +1,6 @@
-# eNotebook React (wip)
+# eNotebook React
 
-This is just a normal opensource desktop app to create and store notes.
+Opensource desktop app to create and store notes.
 
 ## Technologies used:
 
