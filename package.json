@@ -1,5 +1,5 @@
 {
-  "name": "enotebook-react",
+  "name": "eNotebook",
   "description": "Note-taking Application",
   "main": "src/electron.js",
   "version": "1.0.0",
