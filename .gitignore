@@ -4,3 +4,5 @@ node_modules
 # production
 build
 out/
+
+src/config.json
