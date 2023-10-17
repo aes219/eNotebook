@@ -9,7 +9,7 @@ function createWindow() {
       nodeIntegration: false,
       contextIsolation: true,
     },
-    icon: path.join(__dirname, '/icon.png')
+    icon: path.join(__dirname, '/icon.ico')
   });
   mainWindow.setMenuBarVisibility(false)
   mainWindow.loadURL(url);
