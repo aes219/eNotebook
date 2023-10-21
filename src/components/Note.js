@@ -3,6 +3,8 @@ import Card from "./Card";
 import Modal from './Modal';
 
 const Note = () => {
+  const { useNavigate } = require('react-router-dom')
+  const direct = useNavigate()
   const [listing, setListing] = useState([])
   const [currentNote, setCurrentNote] = useState(null)
   const [cursor, setCursor] = useState("default")
@@ -47,7 +49,7 @@ const Note = () => {
                 editNote={() => {
                   window.localStorage.setItem("717l3", a.title);
                   window.localStorage.setItem("c0n73n7", a.content);
-                  window.location = '/createnote'
+                  direct('/createnote')
                   const newListing = listing.filter((note) => note !== a);
                   setListing(newListing);
                   window.localStorage.setItem('notes', JSON.stringify(newListing));

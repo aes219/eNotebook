@@ -1,5 +1,5 @@
-const {url} = require("./config.json");
-const { app, BrowserWindow } = require('electron');
+/* const url = require('./App');
+ */const { app, BrowserWindow } = require('electron');
 const path  = require("path")
 function createWindow() {
   const mainWindow = new BrowserWindow({
@@ -12,7 +12,7 @@ function createWindow() {
     icon: path.join(__dirname, '/icon.ico')
   });
   mainWindow.setMenuBarVisibility(false)
-  mainWindow.loadURL(url);
+  mainWindow.loadFile(path.join(__dirname, '../build/index.html'))
 }
 
 app.on('ready', async () => {

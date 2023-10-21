@@ -1,8 +1,10 @@
 import { useState } from "react";
 
 const CreateNote = () => {
+  const { useNavigate } = require('react-router-dom')
+  const direct = useNavigate()
   const navigate = () => {
-    window.history.back()
+    direct('/')
   }
   const [title, setTitle] = useState(window.localStorage.getItem("717l3"));
   const [content, setContent] = useState(window.localStorage.getItem("c0n73n7"));
@@ -20,14 +22,14 @@ const CreateNote = () => {
       parsed.push(newNote);
       console.log(`${parsed}`)
       window.localStorage.setItem('notes', JSON.stringify(parsed));
-      window.location = "/dash";
+      direct('/')
     }
   }
 
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="card flex-shrink-0 max-w-sm shadow-2xl bg-base-100" style={{width: 500,}}>
+        <div className="card flex-shrink-0 max-w-sm shadow-2xl bg-base-100" style={{ width: 500, }}>
           <div className="card-body h-full">
             <form onSubmit={handleSubmit}>
               <div className="form-control">
