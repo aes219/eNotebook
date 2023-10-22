@@ -33,7 +33,7 @@ const Note = () => {
     }
   }, []);
   
-  if(window.localStorage.getItem('notes') === "[]") {
+  if(!window.localStorage.getItem("notes") || window.localStorage.getItem('notes') === "[]") {
     return (
       <>
       <div class="hero bg-base-200 h-screen -mt-16">
