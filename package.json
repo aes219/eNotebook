@@ -33,12 +33,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "dev": "electron .",
-    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "dev": "electron ."
   },
   "eslintConfig": {
     "extends": [
@@ -57,15 +54,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@electron-forge/cli": "^6.2.1",
-    "@electron-forge/maker-deb": "^6.2.1",
-    "@electron-forge/maker-rpm": "^6.2.1",
-    "@electron-forge/maker-squirrel": "^6.2.1",
-    "@electron-forge/maker-zip": "^6.2.1",
-    "@electron-forge/plugin-auto-unpack-natives": "^6.2.1",
-    "wait-on": "^7.0.1"
   },
   "author": "Vaidik"
 }
