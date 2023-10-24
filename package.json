@@ -2,7 +2,7 @@
   "name": "enotebook",
   "homepage": ".",
   "description": "Note-taking Application",
-  "main": "src/electron.js",
+  "main": "public/electron.js",
   "version": "1.0.0",
   "private": true,
   "contentSecurityPolicy": "script-src 'self'; object-src 'self'; img-src 'self' data:;",
@@ -14,8 +14,6 @@
     "buffer": "^6.0.3",
     "cross-env": "^7.0.3",
     "daisyui": "^2.51.5",
-    "electron": "^27.0.2",
-    "electron-squirrel-startup": "^1.0.0",
     "history": "^5.3.0",
     "https-browserify": "^1.0.0",
     "os-browserify": "^0.3.0",
@@ -32,9 +30,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "build": "react-scripts build",
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "dist": "electron-builder build -wl",
     "dev": "electron ."
   },
   "eslintConfig": {
@@ -55,5 +55,29 @@
       "last 1 safari version"
     ]
   },
-  "author": "Vaidik"
+  "author": "Aestrus <rungtavaidik@gmail.com>",
+  "devDependencies": {
+    "electron": "^27.0.2",
+    "electron-builder": "^24.6.4"
+  },
+  "build": {
+    "productName": "eNotebook",
+    "appId": "com.app.enotebook",
+    "linux": {
+      "target": [
+        "deb"
+      ],
+      "icon": "build/icon.icns",
+      "category": "Utility"
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/win.ico"
+    },
+    "nsis": {
+      "installerIcon": "build/win.ico",
+      "installerHeaderIcon": "build/win.ico",
+      "deleteAppDataOnUninstall": true
+    }
+  }
 }
